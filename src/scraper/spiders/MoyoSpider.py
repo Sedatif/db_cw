@@ -34,7 +34,7 @@ class MoyoSpider(Spider):
         return {
             'name': parse_name(item.xpath('.//div[@class="product-tile_title ddd"]//text()').get().replace('Смартфон', '').strip()),
             'cpu_frequency': parse_cpu_freq(specs.xpath('./div[6]/text()').get()),
-            #'battery': parse_battery(specs.xpath('./div[12]/text()').get()),
+            'battery': parse_battery(specs.xpath('./div[12]/text()').get()),
             'ram': parse_ram(specs.xpath('./div[5]/text()').get()),
             'memory': parse_memory(specs.xpath('./div[4]/text()').get()),
             'diagonal': parse_diagonal(specs.xpath('./div[1]/text()').get()),
